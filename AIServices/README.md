@@ -1,0 +1,1 @@
+Check the previous preference from the Aidb. this Aidb is common for all users. this keeps track of user transaction preferences by getting and posting user preferences.  If the most recent preference was to check the account balance then the following successful login will prompt the customer for a balance check.
