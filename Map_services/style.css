@@ -4,7 +4,7 @@ body{
 
  
 
-  .button {
+  a.button {
      margin: 0%;
      margin-left: 45%;
      position: bottom;
@@ -28,13 +28,13 @@ body{
     cursor: pointer;
   }
   
-  .button1 {
+  a.button.button1 {
     background-color: rgb(5, 119, 49); 
     color: rgb(252, 248, 248); 
     border: 2px solid #4CAF50;
   }
 
-  .button1:hover {
+  a.button.button1:hover {
     background-color: #4CAF50;
     color: white;
   }
