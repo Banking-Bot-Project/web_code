@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BANKING BOT</title>
+        <link rel="stylesheet" href="../botservices/style.css" />
+    </head>
+    <body>
+        <div class="glass">
+            <h1>Hi,there.  ASK your Queries here </h1>
+            <!-- <h2>Yeah,ask Some Question</h2> -->
+            <div class="input">
+                <input
+                    type="text"
+                    id="userBox"
+                    onkeydown="if(event.keyCode == 13){ chat_begin()}"
+                    placeholder="Type your Question"
+                    
+                />
+            </div>
+            <p id="userchat"></p>
+        </div>
+        <script src="../botservices/app.js"></script>
+       
+    </body>
+</html>
