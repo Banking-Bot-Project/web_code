@@ -19,7 +19,9 @@ const insertProjects = (project, callback) => {
 };
 
 const getBalance = (acnumberdata, callback) => {
-  person.logisStatus ? balancedataCollection.find({"usrname":person.usrname})
+
+
+  person.logisStatus ? balancedataCollection.find({ acnumber:  acnumberdata.accnumber*1  })
   .toArray(callback): console.log("Please login first")
 
 };
