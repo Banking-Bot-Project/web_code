@@ -5,32 +5,81 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>Project Banking Bot</title>
     <meta name="description" content="basic template for SIT 725 Prac 3" />
-
     <meta name="author" content="SitePoint" />
-
     <meta property="og:title" content="Project Banking Bot" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="template for Project Banking Bot" />
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
     <!-- Custom Style Sheet-->
     <link rel="stylesheet" href="css/styles.css" />
-
-
 </head>
-
 <body>
-
+    <div class="navbar-fixed">
+    <nav style="background-color: rgba(10, 92, 64, 0.904);">
+        <div class="nav-wrapper navbar-size">
+            <a href="#" class="brand-logo"><img class="user-image-size" src="images/BB logo.jpg" /></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a class="waves-effect waves-light btn click-me-button modal-trigger" id="functionsButton"
+                       onclick="hideFunction()" >Banking Functions </a>
+                </li>
+                <li><a href="sass.html"> ATM Finder </a></li>
+                <li><a > Aboutus</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li>
+                    <a class="waves-effect waves-light btn click-me-button modal-trigger" id="signupButton"
+                        data-target="signup">Sign Up</a>
+                </li>
+                <li>
+                    <a class="waves-effect waves-light btn click-me-button modal-trigger" id="signInButton" data-target="loginmodal">Sign In</a>
+                </li>
+                <li>
+                    <a class="waves-effect waves-light btn click-me-button modal-trigger" id="signOutButton"
+                        >Sign Out</a>                       
+                </li>
+                <li> 
+                  
+                    <a href="#" class="brand-logo"><img class="user-image-size" src="images/personal-icon-6.jpg" id="personal-icon"  style="height: 50px; margin: -12px 0;"/> </a>
+                   
+                </li>
+            </ul>
+        </div>
+        <div class="nav-content" id= "bankingFunctions">
+        <ul class="tabs tabs-transparent">
+            <li class="tab"><a  id="checkBalance" style="visibility: hidden;">Check Balances</a>                       
+            </li>             
+            <li class="tab"><a id="lastTransaction"style="visibility: hidden;">View Transactions</a>
+                    <!-- <script type="module">
+                        import { person } from "../public/js/person";
+                        $("#lastTransaction").click(() => {
+                            person.logisStatus ? getTrans(person?.acnumber) : alert("Please login first")
+                        })
+                    </script> -->
+            </li>
+            <li class="tab"><a class="modal-trigger" id="addaccount" style="visibility: hidden;" data-target="addaccounts" >Add Account</a>
+                    <!-- <a class="waves-effect waves-light btn click-me-button modal-trigger" id="signupButton" data-target="signup">Sign Up</a> -->
+            </li>
+            <li class="tab"><a class="modal-trigger" id="deposit" data-target="deposits" style="visibility: hidden;">Deposit</a>
+                    <!-- <a class="waves-effect waves-light btn click-me-button modal-trigger" id="signupButton" data-target="signup">Sign Up</a> -->
+            </li>
+            <li class="tab"><a class="modal-trigger" data-target="deleteaccount" id="cancel"  style="visibility: hidden;">Account Cancel</a>
+            </li>
+                <!-- <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+                <li class="tab"><a class= "modal-trigger" data-target="loginmodal">Test 4</a></li> -->
+        </ul>
+        </div>
+    </nav>
+    
+    </div>
 
     <main class="main-body" style="height: max-content; background-color: #282A35;">
-        <div class="container">
+        <div class="container"><br></br>
             <div class="row" id="card-section">
                 <div class="pro-caption ws-black">
                     <h1>Welcome to Banking BOT</h1>
@@ -41,22 +90,10 @@
                 <div class="col s12 center-align">
                     <!-- <img class="materialboxed materialboxed-image" src="images/Annonymos_hacker_mask_hooded.png" /> -->
                 </div>
-                <div class="col s12 center-align">
-                    <a class="waves-effect waves-light btn click-me-button modal-trigger" id="clickMeButton"
-                        data-target="signup"><i class="material-icons left">auto_fix_high</i>BB</a>
-                </div>
+
             </div>
              <div class="row" style="background-color: #282A35;" >
-                <div class="col s8 center-align" style="height:400px;">
-                    <div class="card medium" >
-                        <div class="card-content">
-                            <span class="card-text activator grey-text text-darken-4">
-                                <h6 style="background-color:rgba(158, 197, 189, 0.555);" id="howitworks" ></h6>
-                                
-                        </div>               
-                    </div>
-                </div>
-                <div class="col s8 left-align" style="height:400px; width: 400px;">
+                <div class="col s12 left-align">
                     <p class="flow-text" style="align-content: flex-start;">
                     <h4 style="color:white;font-size:23px;font-weight:700;margin-top:30px!important;">
                         <a href="help.html">Not Sure Where To Begin?</a>
@@ -130,9 +167,493 @@
                 </div>
             </div> 
         </div>
+        <div class="footer" > 
 
+            <div class="pro-caption ws-black" >
+                <h1>Customer Feedbacks</h1>
+                <h3>We love to hear from you</h3>   
+                <a href="#" class="ws-btn tut-button"
+                style="margin-top:35px;font-size:20px;width:300px;padding: 11px 18px;" id="proFromDefault">Contact Us</a><br>
+            </div>
+        
+            <svg style="background-color:#D9EEE1;" width="100%" height="1" viewBox="100 0 100 100" preserveAspectRatio="none">
+            <path id="wavepath" d="M0,0  L110,0C35,150 35,0 0,100z" fill="#2e2a2a"></path>         
+            </svg>       
+
+
+            <footer >   
+                <div class="pro-caption ws-black">
+                <h6>
+                <a class="ppl" href="#" title="Back to top">Back to Top <strong>↑</strong></a> /
+                © 2023 BB inc. All rights reserved</a>
+                </h6>
+                </div>      
+            </footer>
+
+        </div>
+        
     <!-- Modal Structure -->
-   
+
+
+    <div id="signup" class="modal modal-fixed-footer">
+        <div class="row modal-content">
+            <form class="col s12">
+    
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="fname" type="text" name="fname" required pattern="[A-Za-z]+" minlength="2" maxlength="10"
+                            size="15" class="validate">
+                        <label for="fname">First Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="lname" type="text" name="lname" pattern="[A-Za-z]+" minlength="2" maxlength="15"
+                            size="20" class="validate">
+                        <label for="lname">Last Name</label>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="phoneno" type="number" name="phoneno" pattern="\d{10,10}" class="validate">
+                        <label for="phoneno">Phone Number</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="address" type="text" name="address" class="validate">
+                        <label for="address">Address</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s3">
+                        <input id="state" type="text" name="state" class="validate">
+                        <label for="state">State</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s3">
+                        <input id="postcode" type="number" name="postcode" required pattern="\d{4,4}" class="validate">
+                        <label for="postcode">Postcode</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="email" type="text" name="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>              
+                <div class="row">
+                    <div class="input-field col s3">
+                        <p class="margin medium-small">
+                            <a class="waves-effect waves-ligh modal-trigger" id="Register" data-target="usrnmpswd">
+                                <i class="material-icons left" style="color: rgb(161, 48, 146);">auto_fix_high</i>Next
+                                --></a>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="loginmodal" class="modal" style='height:auto; width: 340px;'>
+        <div class="row modal-content">
+            <form class="col s12" style='height:auto; width:auto;'>
+    
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="username" type="text" name='username' required pattern="[A-Za-z]+" minlength="2"
+                            maxlength="10" size="15" class="validate">
+                        <label for="username">Enter username</label>
+                    </div>
+                </div>
+    
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <input class='validate' type='password' name='password' id='psword'>
+                        <label for='password'>Enter your password</label>
+                    </div>
+                    <div class='input-field col s12'>
+                        <label style='float: right;'>
+                            <a class='pink-text' href='#!'><b>Forgot Password?</b></a>
+                        </label>
+                    </div>
+                </div>
+                <br />
+                <div class='center-align'>
+                    <div class='input-field col s12'>
+                        <button type="reset" name='btn_login' id="login"
+                            class='col s12 btn btn_login waves-effect indigo'>Login</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='input-field col s7'>
+                        <p class="margin medium-small">
+                            <a class="labelforregister">
+                                <i class="left" style="color: rgb(31, 6, 27);">Not a BB member?</i></a>
+                        </p>
+                    </div>
+                    <div class='input-field col s5'>
+                        <p class="margin medium-small">
+                            <a class="waves-effect waves-ligh modal-trigger" id="Register" data-target="signup">
+                                <i class="" style="color: rgb(161, 48, 146);">Register</i></a>
+                        </p>
+                    </div>
+                </div>
+                <br></br><br></br>
+                <div class="label center-align">
+                        <p class="label footer">
+                            <a class="grey-text waves-effect waves-ligh">
+                                <i class="center-align" style="color:#282A35; font-size: smaller;">BB Privacy &
+                                    Terms</i></a>
+                        </p>
+                </div>        
+            </form>
+        </div>
+    </div>
+    <div id="usrnmpswd" class="modal" style='height:auto; width: 300px;'>
+        <div class="row modal-content">
+            <form class="col s12" style='height:auto; width:auto;'>
+    
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="usrname" type="text" name='usrname' class="validate">
+                        <label for="usrname">Enter Username</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <input class='validate' type='number' name='accessno' id='accessno'>
+                        <label for='accessno'>Access Number</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <input class='validate' type='number' name='securityno' id='securityno'>
+                        <label for='securityno'>Security Number</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <input class='validate' type='password' name='psword' id='password'>
+                        <label for='password'>Enter password</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <input class='validate' type='password' name='conpassword' id='conpassword'>
+                        <label for='conpassword'>Confirm password</label>
+                    </div>
+    
+                </div>
+                <br />
+    
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <button type='submit' name='btn_login' id='btn_login'
+                            class='col s6 btn btn_login waves-effect indigo' style="align-content: center;">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="checkBalances" class="modal" style='height:auto; width: 300px;'>
+        <div class="row modal-content">
+            <form class="col s12" style='height:auto; width:auto;'>
+    
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="checkBalancesAccountNumber" type="number" name='checkBalancesAccountNumber' pattern="\d{4,4}"
+                            class="validate">
+                        <label for="checkBalancesAccountNumber">Account Number</label>
+                    </div>
+                </div>
+                <div class='row'><br></br>
+                    
+                </div>
+              
+                <div class='row' id="checkaccountrow" style="display: block;">
+                   
+                    <div class='input-field col s12'>
+                        <button type="reset" name='btn_checkAccount' id='btn_checkAccount'
+                            class='col s12 btn btn_addaccounts waves-effect indigo' style="align-content: center; ">Check
+                            Account</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="Verificationcode" class="modal" style='height:auto; width: 300px;'>
+        <div class="row modal-content">
+            <form class="col s12" style='height:auto; width:auto;'>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <!-- <input id="usrname" type="text" name='usrname' class="validate"> -->
+                        <label for="info">Code has been sent to your mobile</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <input class='validate' type='number' name='code' id='code'>
+                        <!-- <label for='code'>Access Number</label> -->
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <!-- <input class='validate' type='number' name='securityno' id='securityno'> -->
+                        <label for='didnotgetcode'>Did not get code</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <button type='submit' name='cancel' id='cancel' class='col s6 btn btn_login waves-effect indigo'
+                            style="align-content: center;">Cancel</button>
+                    </div>
+                </div>
+                <div class='row'>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="heybb" class="modal" style='height:auto; width: 500px;'>
+        <div class="row modal-content">
+            <form class="col s12" style='height:auto; width:auto;'>
+    
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="hi" type="text" name='hi' class="validate">
+                        <label for="hi">Hi, How can I do for you? </label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <label for='voiceicon'></label>
+                    </div>
+                </div>
+    
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <button type='submit' name='bankbalancecheck' id='bankbalancecheck'
+                            class='col s6 btn btn_login waves-effect indigo' style="align-content: center;">Bank balance
+                            check</button>
+                        <button type='submit' name='previoustransactions' id='previoustransactions'
+                            class='col s6 btn btn_login waves-effect indigo' style="align-content: center;">Previous
+                            transactions</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="addaccounts" class="modal" style='height:auto; width: 300px;'>
+        <div class="row modal-content">
+            <form class="col s12" style='height:auto; width:auto;'>
+    
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="addaccountsAccountNumber" type="number" name='addaccountsAccountNumber' pattern="\d{4,4}"
+                            class="validate">
+                        <label for="addaccountsAccountNumber">Account Number</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class="input-field col s12">
+                        <label for="group1">Account Type</label><br><br>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group1" type="radio" value="Savings" />
+                                <span>Savings</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group1" type="radio" value="Cheque" />
+                                <span>Cheque</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group1" type="radio" value="Credit" />
+                                <span>Credit</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class='row' id = "addaccountrow" style="display: block;">
+                    <div class='input-field col s12'>
+                        <button type="reset" name='btn_addaccounts' id='btn_addaccounts'
+                            class='col s12 btn btn_addaccounts waves-effect indigo' style="align-content: center; ">Add
+                            Account</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <div id="deposits" class="modal" style='height:auto; width: 300px;'>
+        <div class="row modal-content">
+            <form class="col s12" style='height:auto; width:auto;'>
+    
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="depositAccountNumber" type="number" name='depositAccountNumber' pattern="\d{4,4}"
+                            class="validate">
+                        <label for="depositAccountNumber">Account Number</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class="input-field col s12">
+                        <label for="group2">Account Type</label><br><br>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group2" type="radio" value="Savings" />
+                                <span>Savings</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group2" type="radio" value="Cheque" />
+                                <span>Cheque</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group2" type="radio" value="Credit" />
+                                <span>Credit</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="depositAmount" type="number" name='depositAmount' pattern="\d{4,4}" class="validate">
+                        <label for="depositAmount">Deposit Amount</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <button type="reset" name='btn_deposit' id='btn_deposit'
+                            class='col s12 btn btn_deposit waves-effect indigo'
+                            style="align-content: center; ">Deposit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="viewccounts" class="modal" style='height:auto; width: 400px;'>
+        <div class="row modal-content">
+            <form class="col s12" style='height:auto; width:auto;'>
+    
+                <div class='row'>
+                    <div class="input-field col s12">
+                        <select id="selectviewccounts">
+                            <option value="" disabled selected>Choose Account Type</option>
+                            <option value="1">Savings</option>
+                            <option value="2">Cheque</option>
+                            <option value="3">Loan</option>
+                        </select>
+                        <label for="selectviewccounts">Account Type</label>
+                    </div>
+                </div>
+    
+            </form>
+        </div>
+    </div>
+    <div id="deleteaccount" class="modal" style='height:auto; width: 300px;'>
+        <div class="row modal-content">
+            <form class="col s12" style='height:auto; width:auto;'>
+    
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="deleteaccountsAccountNumber" type="number" name='deleteaccountsAccountNumber' pattern="\d{4,4}"
+                            class="validate">
+                        <label for="deleteaccountsAccountNumber">Account Number</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class="input-field col s12">
+                        <label for="group1">Deleting Account Type</label><br><br>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="delete" type="radio" value="Savings" />
+                                <span>Savings</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="delete" type="radio" value="Cheque" />
+                                <span>Cheque</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="delete" type="radio" value="Credit" />
+                                <span>Credit</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+              
+                <div class='row' id="deleteaccountrow" style="display: block;">
+                    <div class='input-field col s12'>
+                        <button type="reset" name='btn_cancelAccount' id='btn_cancelAccount'
+                            class='col s12 btn btn_addaccounts waves-effect indigo' style="align-content: center; ">Delete
+                            Account</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="transferto" class="modal" style='height:auto; width: 400px;'>
+            <div class="row modal-content">
+                <form class="col s12" style='height:auto; width:auto;'>
+        
+                    <div class='row'>
+                        <div class="input-field col s12">
+                            <select id="selectfromccounts">
+                                <option value="" disabled selected>Choose Account Type</option>
+                                <option value="1">Savings</option>
+                                <option value="2">Cheque</option>
+                                <option value="3">Loan</option>
+                            </select>
+                            <label for="selectfromccounts">Transfer From </label>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="input-field col s12">
+                            <select id="selecttoccounts">
+                                <option value="" disabled selected>Choose Account Type</option>
+                                <option value="1">Savings</option>
+                                <option value="2">Cheque</option>
+                                <option value="3">Loan</option>
+                            </select>
+                            <label for="selecttoccounts">Transfer To </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="amount" type="number" name="amount" pattern="\d{4,4}" class="validate">
+                            <label for="amount"> Amount</label>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='input-field col s12'>
+                            <button type="reset" name='btn_transfer' id="transfer"
+                                class='col s6 btn btn_login waves-effect indigo'>Transfer</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <p class="margin medium-small">
+                                <a class="waves-effect waves-ligh modal-trigger" id="Register" data-target="usrnmpswd">
+                                    <i class="material-icons left" style="color: rgb(161, 48, 146);">auto_fix_high</i>Next
+                                    --></a>
+                            </p>
+                        </div>
+                    </div>
+        
+                </form>
+            </div>
+        </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
